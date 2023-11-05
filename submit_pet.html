@@ -19,13 +19,36 @@
           <h3>PET PROFILE</h3>
           <p>Fill out information about your pet.</p>
         </div>
-        <form class="pet_form">
+        <form class="pet_form" method="post" enctype="multipart/form-data">
+
+          <label for="pet_name">Pet Name</label>
           <input type="text" placeholder="PET NAME"/>
-          <input type="text" placeholder="PET NICKNAME"/>
-          <input type="text" placeholder="BREED / SPECIES"/>
-          <label for="birthday">PET BIRTHDAY:</label>
-          <input type="date" id="birthday" name="birthday">
-          <input type="submit" value="SAVE">
+
+          <label for="pet_type">Type</label>
+          <select name="pet_type">
+            <option>Dog</option>
+            <option>Cat</option>
+            <option>Bird</option>
+            <option>Fish</option>
+            <option>Horse</option>
+            <option>Other</option>
+          </select>
+
+          <label for="pet_variant">Variant</label>
+          <input type="text" id="pet_variant" placeholder="COLOR / BREED / SPECIES"/>
+
+          <label for="pet_birthday">Birthday</label>
+          <input type="date" id="pet_birthday" name="pet_birthday">
+
+          <label for="pet_information">About Pet</label>
+          <textarea name = "pet_information" placeholder="Enter fun facts about your pet"></textarea>
+
+          <label for="pet_photo">Pet Photo</label>
+          <input type="file" name="pet_photo">
+
+          <label></label>
+          <input type="submit" value="SUBMIT">
+          <input type="reset" value="RESET">
         </form>
       </div>
     </div>

@@ -2,24 +2,32 @@
 /* dark theme */
 body {
 	font-family: Verdana;
-	background-color: #2C2F33; 
-	max-width: 75%;
+	background-color: #1e2124; 
+	max-width: 640px;
 	margin: auto;
 	padding: 10px;
 }
 
-p, h1, h3, aside, figcaption, li {
+nav, main, footer {
+  background: #282b30;
+  margin: 10px;
+  padding: 10px;
+}
+
+p, h1, h3, aside, figcaption, li, label {
 	color: #FFFFFF;
 }
 
 
 /* hovered & visited links change color */
-a:visited {
-  color: teal;
+a {
+  color: #9656ce;
 }
-
+a:visited {
+  color:  #5b209a;
+}
 a:hover {
-  background-color: black;
+  background-color: #1e2124;
 }
 
 
@@ -64,5 +72,44 @@ figure > img {
   font-size: 17px;
 }
 
+/* TABLE */
+table {
+  border: solid 1pt white;
+  border-collapse: collapse;
+  color: white;
+}
+td {
+  border: solid 1pt white;
+  padding: 10pt;
+  text-align: center;
+}
+th {
+  background-color: #1e2124;
+}
 
+/* FORMS */
+input, textarea {
+  border: 0;
+  margin: 3px;
+  padding: 7px 5px;
+  border-radius: 2px;
+  color: white;
+  background-color: #424549;
+}
 
+input[type=submit] {
+  color: white;
+  background-color: #5b209a;
+}
+input[type=submit]:hover {
+  color: white;
+  background-color: #9656ce;
+}
+input[type=reset]:hover {
+  background-color: #696e74;
+}
+
+label {
+  display: block;
+  margin: 10px 0 0 5px;
+}
