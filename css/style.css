@@ -1,0 +1,68 @@
+
+/* dark theme */
+body {
+	font-family: Verdana;
+	background-color: #2C2F33; 
+	max-width: 75%;
+	margin: auto;
+	padding: 10px;
+}
+
+p, h1, h3, aside, figcaption, li {
+	color: #FFFFFF;
+}
+
+
+/* hovered & visited links change color */
+a:visited {
+  color: teal;
+}
+
+a:hover {
+  background-color: black;
+}
+
+
+
+/* .pdf and .docx file extension links in "href" will have a small icon next to them */
+a[href$=".pdf"] { 
+  background: url('../images/pdf.png') 0 50% no-repeat; 
+  padding-left: 25px;
+}
+a[href$=".docx"] { 
+  background: url('../images/docx.png') 0 50% no-repeat; 
+  padding-left: 25px;
+}
+
+
+/* figure images have purple border */
+figure > img {
+	border: 10px solid purple;
+	padding: 15px;
+	border-image: url('../images/border.png') 30 round;
+}
+
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; 
+}
+
+.navbar li {
+  float: left;
+  vertical-align: center;
+  list-style-type: none;
+  display: inline;
+}
+
+.navbar li a {
+  display: block;
+  text-align: center;
+  padding: 0px 10px 0px 10px;
+  font-size: 17px;
+}
+
+
+
