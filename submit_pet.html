@@ -4,54 +4,92 @@
 <head>
   <meta charset="utf-8">
   <title> Pet Profile </title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mobile_style.css" medi="screen and (max-width:500px)"/>
+  <link rel="stylesheet" href="css/style.css" media="screen and (min-width:501px)" />
 </head>
 
 <body>
   <header>
-    <a href="index.html"><img src="images/pet_archive_logo.png" alt="Archive logo." title = "Home" width="105" height="50" /></a>
+    <a class="website_home" href="index.html"><img src="images/pet_archive_logo.png" alt="Archive logo." title = "Home" width="105" height="50" /></a>
+
+    <nav class="navbar_menu">
+      <h2>MENU</h2>
+      <div class="navbar_menuitems">
+      <ul>
+        <li><a href="login.html">LOGIN</a></li>
+        <li><a href="register.html">REGISTER</a></li>
+        <li><a href="pets_list.html">PETS ARCHIVE</a></li>
+        <li><a href="assignment_details.html">ASSIGNMENT DETAILS</a></li>
+      </ul>
+      </div>
+    </nav>
   </header>
 
   <main>
-    <div class="pet_profile_page">
-      <div class="pet_form">
-        <div class="pet_header">
-          <h3>PET PROFILE</h3>
-          <p>Fill out information about your pet.</p>
-        </div>
-        <form class="pet_form" method="post" enctype="multipart/form-data">
-
-          <label for="pet_name">Pet Name</label>
-          <input type="text" placeholder="PET NAME"/>
-
-          <label for="pet_type">Type</label>
-          <select name="pet_type">
-            <option>Dog</option>
-            <option>Cat</option>
-            <option>Bird</option>
-            <option>Fish</option>
-            <option>Horse</option>
-            <option>Other</option>
-          </select>
-
-          <label for="pet_variant">Variant</label>
-          <input type="text" id="pet_variant" placeholder="COLOR / BREED / SPECIES"/>
-
-          <label for="pet_birthday">Birthday</label>
-          <input type="date" id="pet_birthday" name="pet_birthday">
-
-          <label for="pet_information">About Pet</label>
-          <textarea name = "pet_information" placeholder="Enter fun facts about your pet"></textarea>
-
-          <label for="pet_photo">Pet Photo</label>
-          <input type="file" name="pet_photo">
-
-          <label></label>
-          <input type="submit" value="SUBMIT">
-          <input type="reset" value="RESET">
-        </form>
-      </div>
+    <div>
+      <h3 id="pet_header">PET PROFILE</h3>
+      <p>Fill out information about your pet.</p>
     </div>
+    <form id="pet_form">
+
+      <label for="pet_name">Pet Name</label>
+      <input type="text" name="pet_name" id="pet_name" placeholder="PET NAME"/>
+
+      <label for="pet_kind">Kind of Pet</label>
+      <select name="pet_kind" id="pet_kind">
+        <option>Dog</option>
+        <option>Cat</option>
+        <option>Bird</option>
+        <option>Fish</option>
+        <option>Horse</option>
+        <option>Other</option>
+      </select>
+
+      <label for="pet_variant">Variant</label>
+      <input type="text" name="pet_variant" id="pet_variant" placeholder="COLOR / BREED / SPECIES"/>
+
+      <label for="pet_birthday">Birthday</label>
+      <input type="date" name="pet_birthday" id="pet_birthday" >
+
+      <label for="pet_biography">Pet Bio</label>
+      <textarea name = "pet_biography" id="pet_biography" placeholder="Enter fun facts about your pet"></textarea>
+
+      <label for="pet_photo">Pet Photo</label>
+      <input type="file" name="pet_photo" id="pet_photo">
+
+      <label></label>
+      <input type="submit" value="SUBMIT">
+      <input type="reset" value="RESET">
+    </form>
   </main>
+
+  <div class="json_output">
+    <p id="output_pet_json"> </p>
+  </div>
+
+  <script>
+    const myJSONText = document.getElementById("output_pet_json");
+    myJSONText.innerHTML = localStorage.getItem("JSONInfo");
+    // get the form object
+    const myForm = document.querySelector("#pet_form");
+    // add event listener for the submit event
+    myForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        // get pet information
+        let name = document.querySelector("#pet_name").value;
+        let kind = document.querySelector("#pet_kind").value;
+        let variant = document.querySelector("#pet_variant").value;
+        let birthday = document.querySelector("#pet_birthday").value;
+        let biography = document.querySelector("#pet_biography").value;
+        let photo = document.querySelector("#pet_photo").value;
+
+      // creating object and JSON from the form info
+      const petInfo = {Name:name, Kind:kind, Variant:variant, Birthday:birthday, Biography:biography, Photo:photo };
+      let myTextJSON = JSON.stringify(petInfo);
+      // storing them in the local computer
+      localStorage.setItem("JSONInfo", myTextJSON);
+      myJSONText.innerHTML = myTextJSON;
+    });
+  </script>
 </body>
 </html>

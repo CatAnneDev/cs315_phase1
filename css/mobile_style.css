@@ -4,11 +4,11 @@
 
 /* dark theme */
 body {
-	font-family: Verdana;
-	background-color: #1e2124; 
-	max-width: 640px;
-	margin: auto;
-	padding: 10px;
+  font-family: Verdana;
+  background-color: #1e2124; 
+  max-width: 640px;
+  margin: auto;
+  padding: 10px;
 }
 nav, main, footer, div.json_output {
   background: #282b30;
@@ -24,7 +24,7 @@ div.json_output {
   overflow: auto;
 }
 p, h1, h2, h3, aside, figcaption, li, label {
-	color: #FFFFFF;
+  color: #FFFFFF;
 }
 .website_home {
   padding:5px;
@@ -57,9 +57,10 @@ a[href$=".docx"] {
 
 /* figure images have purple border and wiggle*/
 figure > picture > img {
-	border: 10px solid purple;
-	padding: 15px;
-	border-image: url('../images/border.png') 30 round;
+  width:100%;
+  border: 10px solid purple;
+  padding: 15px;
+  border-image: url('../images/border.png') 30 round;
 }
 figure >picture > img:hover {
   animation: image_wiggle 3s linear infinite;

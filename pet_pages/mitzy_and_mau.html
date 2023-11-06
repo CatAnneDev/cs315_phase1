@@ -4,20 +4,24 @@
 <head>
 	<meta charset="utf-8">
 	<title> Mitzy & Mau - Pet </title>
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/mobile_style.css" medi="screen and (max-width:500px)"/>
+	<link rel="stylesheet" href="../css/style.css" media="screen and (min-width:501px)" />
 </head>
 
 <body>
 	<header>
-		<a href="index.html"><img src="images/pet_archive_logo.png" alt="Archive logo." title = "Home" width="105" height="50" /></a>
-		<nav class="navbar">
+		<a class="website_home" href="../index.html"><img src="../images/pet_archive_logo.png" alt="Archive logo." title = "Home" width="105" height="50" /></a>
+
+		<nav class="navbar_menu">
+			<h2>MENU</h2>
+			<div class="navbar_menuitems">
 			<ul>
-				<li><a href="max.html">Max</a></li>
-				<li><a href="mitzy_and_mau.html">Mitzy and Mau</a></li>
-				<li><a href="mycousinvinny.html">My Cousin Vinny</a></li>
-				<li><a href="css_lab.html">CSS Lab</a></li>
-				<li><a href="files_page.html">Files</a></li>
+				<li><a href="../login.html">LOGIN</a></li>
+				<li><a href="../register.html">REGISTER</a></li>
+				<li><a href="../pets_list.html">PETS ARCHIVE</a></li>
+				<li><a href="../assignment_details.html">ASSIGNMENT DETAILS</a></li>
 			</ul>
+			</div>
 		</nav>
 	</header>
 
@@ -27,11 +31,17 @@
 
 	<div class="images">
 		<figure>
-			<img src="../images/mitzy.png" alt="Image of a long-haired grey tabby cat." title = "Mitzy" width="300" height="300" />
+			<picture>
+					<source media="(max-width:500px)" srcset="../images/mitzy_small.png" />
+					<img src="../images/mitzy.png" alt="Image of a long-haired grey tabby cat." title = "Mitzy"/>
+			</picture>
 		</figure>
 		<aside>Mitzy finally caught in 4K, often being too energetic <br>to take a photo of. She likes pats and belly rubs.</aside>
 		<figure>
-			<img src="../images/mau.png" alt="Image of a leashed dark brown cat going for a walk." title = "Mau" width="300" height="300" />
+			<picture>
+					<source media="(max-width:500px)" srcset="../images/mau_small.png" />
+					<img src="../images/mau.png" alt="Image of a leashed dark brown cat going for a walk." title = "Mau"/>
+			</picture>
 		</figure>
 		<aside>Mau being well-behaved going for a walk. <br>He is gentle and likes being pet on the face.</aside>
 
