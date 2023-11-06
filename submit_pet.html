@@ -68,11 +68,11 @@
   </div>
 
   <script>
+    // output to <p id="output_pet_json"> </p>
     const myJSONText = document.getElementById("output_pet_json");
     myJSONText.innerHTML = localStorage.getItem("JSONInfo");
-    // get the form object
     const myForm = document.querySelector("#pet_form");
-    // add event listener for the submit event
+    // add event listener for form submission
     myForm.addEventListener("submit", function (e) {
         e.preventDefault();
         // get pet information
@@ -83,11 +83,12 @@
         let biography = document.querySelector("#pet_biography").value;
         let photo = document.querySelector("#pet_photo").value;
 
-      // creating object and JSON from the form info
+      // creating object and JSON from the pet form info
       const petInfo = {Name:name, Kind:kind, Variant:variant, Birthday:birthday, Biography:biography, Photo:photo };
       let myTextJSON = JSON.stringify(petInfo);
-      // storing them in the local computer
+      // storing object locally
       localStorage.setItem("JSONInfo", myTextJSON);
+      // outputting string JSON
       myJSONText.innerHTML = myTextJSON;
     });
   </script>
